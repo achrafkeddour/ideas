@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="autowrite" style="color:red"></div>
+ 
+
+    <script >const text = document.querySelector(".autowrite");
+        const words = ["Hello Everyone !", "I'm Achraf Keddour  ..!", "a Frontend Developer", "I use Html & Css & Javascript"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        
+        function writeText() {
+            text.textContent = words[wordIndex].slice(0, charIndex);
+            charIndex++;
+        
+            if (charIndex > words[wordIndex].length) {
+                charIndex = 0;
+                wordIndex = (wordIndex + 1) % words.length;
+            }
+        }
+        
+        setInterval(writeText, 180);
+        </script>
+</body>
+</html>
